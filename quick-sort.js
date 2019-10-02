@@ -1,3 +1,5 @@
+const arrayGenerator = require('./array-generator');
+
 const partition = (arr, low, high) => {
     const pivot = arr[Math.floor((low + high) / 2)];
 
@@ -19,7 +21,7 @@ const partition = (arr, low, high) => {
 }
 
 const qsort = (arr, low = 0, high = arr.length - 1) => {
-    
+
     if (high > low) {
         const index = partition(arr, low, high);
         qsort(arr, low, index - 1);
@@ -29,6 +31,6 @@ const qsort = (arr, low = 0, high = arr.length - 1) => {
     return arr;
 }
 
-const arr = [1,2,3,6,-3, 11, -11, 24, -42, 0];
+const arr = arrayGenerator(100);
 
 console.log(qsort(arr));

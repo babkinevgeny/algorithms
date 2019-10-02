@@ -1,3 +1,5 @@
+const arrayGenerator = require('./array-generator');
+
 const findMin = arr => {
     let min = arr[0];
     let minIndex = 0;
@@ -21,6 +23,6 @@ const selectionSort = arr => {
     return newArr;
 }
 
-const arr = [1,2,3,6,-3, 11, -11, 24, -42, 0];
+const arr = arrayGenerator(50);
 
 console.log(selectionSort(arr));
